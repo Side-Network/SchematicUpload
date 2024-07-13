@@ -140,7 +140,7 @@ public class FileUploadServlet extends HttpServlet {
             Player player = plugin.getServer().getPlayer(user);
             if (player != null) {
                 plugin.sendMessage(player, "schematic_upload_complete",
-                        String.format("//schem load %s", fileName));
+                        String.format("//schem load %s fast.2", fileName));
             }
         }
 

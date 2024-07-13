@@ -48,10 +48,10 @@ function postForm() {
         if (this.status === 200) {
             let command = '//schem load ' + message;
             let successMessage = '<b>Successfully uploaded schematic</b><br/>\n' +
-                'Use the following command in-game to copy the schematic to your WorldEdit clipboard:<br/>\n' +
-                '<code id="schematic-command" onclick="copyCommand()">' + command + '</code> <span id="copied-confirmation"></span>'
+                'Use the in-game command to copy the schematic to your WorldEdit clipboard:<br/>\n' +
+                'Note: FAWE has recently updated to V3 schematics, most schematics will be V2<br/>\n' +
+                'All Litematica Conversions are V2. Remove "fast.2" from the command for V3 schematics'
             showMessage(successMessage, 'var(--accent-color)')
-            document.getElementById('copy-area').value = command;
         } else {
             showMessage(message, 'red')
         }
