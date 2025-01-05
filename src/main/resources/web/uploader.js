@@ -83,8 +83,8 @@ const isFileValid = () => {
         return false;
     }
 
-    /* Hard schematic size limit of 5mb for safety */
-    return fileUpload.files[0].size <= 5000000;
+    /* Hard schematic size limit of 20mb for safety */
+    return fileUpload.files[0].size <= 20000000;
 };
 
 function copyCommand() {
