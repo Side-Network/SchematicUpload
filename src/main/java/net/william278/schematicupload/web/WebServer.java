@@ -146,8 +146,8 @@ public class WebServer {
             }
 
             // Upload size limits
-            final long maxFileSize = 2 * 1024 * 1024; // 2 MB
-            final long maxRequestSize = 2 * 1024 * 1024; // 2 MB
+            final long maxFileSize = 20 * 1024 * 1024; // 20 MB
+            final long maxRequestSize = 20 * 1024 * 1024; // 20 MB
             final int fileSizeThreshold = 64; // 64 bytes
 
             // Create multipart upload handler
