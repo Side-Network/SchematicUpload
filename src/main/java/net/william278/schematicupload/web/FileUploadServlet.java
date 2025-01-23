@@ -87,7 +87,7 @@ public class FileUploadServlet extends HttpServlet {
             sendReply(servletResponse, 400, "Invalid file name (empty)");
             return;
         }
-        if (fileName.length() >= 48) {
+        if (fileName.length() >= 100) {
             sendReply(servletResponse, 400, "Invalid file name (too long)");
             return;
         }
@@ -130,6 +130,8 @@ public class FileUploadServlet extends HttpServlet {
                 }
                 fileName = converted.stream().map(File::getName).collect(Collectors.joining(" "));
             }
+        } catch (Exception e) {
+            e.printStackTrace();
         }
 
         // Validate the upload occurred successfully

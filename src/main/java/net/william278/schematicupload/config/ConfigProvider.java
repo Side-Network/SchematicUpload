@@ -128,8 +128,8 @@ public interface ConfigProvider {
     enum WorldEditType {
         FAST_ASYNC_WORLD_EDIT(
                 "FastAsyncWorldEdit",
-                (plugin) -> Paths.get(plugin.getServer().getWorldContainer().getAbsolutePath(),
-                        "plugins", "FastAsyncWorldEdit", "schematics")
+                (plugin) -> Paths.get(plugin.getServer().getPluginManager().getPlugin("FastAsyncWorldEdit").getDataFolder().getAbsolutePath(),
+                        "schematics")
         ),
         ASYNC_WORLD_EDIT(
                 "AsyncWorldEdit",
