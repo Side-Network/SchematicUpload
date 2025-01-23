@@ -109,12 +109,6 @@ public interface ConfigProvider {
 
     @NotNull
     default WorldEditType getWorldEditType() {
-        final PluginManager manager = getPlugin().getServer().getPluginManager();
-        for (WorldEditType type : WorldEditType.values()) {
-            if (manager.getPlugin(type.getPluginName()) != null) {
-                return type;
-            }
-        }
         return WorldEditType.NONE;
     }
 
@@ -126,21 +120,6 @@ public interface ConfigProvider {
 
     @AllArgsConstructor
     enum WorldEditType {
-        FAST_ASYNC_WORLD_EDIT(
-                "FastAsyncWorldEdit",
-                (plugin) -> Paths.get(plugin.getServer().getWorldContainer().getAbsolutePath(),
-                        "plugins", "FastAsyncWorldEdit", "schematics")
-        ),
-        ASYNC_WORLD_EDIT(
-                "AsyncWorldEdit",
-                (plugin) -> Paths.get(plugin.getServer().getWorldContainer().getAbsolutePath(),
-                        "plugins", "WorldEdit", "schematics")
-        ),
-        WORLD_EDIT(
-                "WorldEdit",
-                (plugin) -> Paths.get(plugin.getServer().getWorldContainer().getAbsolutePath(),
-                        "plugins", "WorldEdit", "schematics")
-        ),
         NONE(
                 "None",
                 (plugin) -> plugin.getServer().getWorldContainer().toPath().resolve(
